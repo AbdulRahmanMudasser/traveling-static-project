@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AATA Travel</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background: rgba(0,0,0,0.6);
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar ul li a {
+            color: white;
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Hero */
+        .hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 70px; /* offset navbar */
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 50px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Cards */
+        .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            width: 250px;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            text-decoration: none;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
+        }
+
+        .card-text {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 15px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        /* Packages */
+        .package-box {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .package {
+            background: #f2f2f2;
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            text-align: center;
+        }
+
+        /* FAQs */
+        .faq {
+            max-width: 600px;
+            margin: 15px auto;
+        }
+
+        /* Reviews */
+        .review {
+            max-width: 500px;
+            margin: 15px auto;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">
+        <img src="AATA.jpeg" alt="AATA Travel Logo" width="50">
+        <span>AATA Travel</span>
+    </div>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#aims">Aims</a></li>
+        <li><a href="#international">International</a></li>
+        <li><a href="#national">National</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#faqs">FAQs</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+    </ul>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <img src="AATA.jpeg" alt="Hero Image" style="width:100%; height:auto; max-height:500px; object-fit:cover;">
+</section>
+
+<!-- Aims -->
+<h1 style="color:#e63946; text-align:center;">Aim</h1>
+<p style="text-align:center; font-weight:bold;">
+    Our aim is to provide safe, affordable, and memorable travel experiences.<br>
+    We focus on customer satisfaction, comfort, and unforgettable journeys.
+</p>
+
+<!-- International -->
+<section id="international">
+    <h2>International Destinations</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="Maldives.jpeg">
+            <div class="card-text">Maldives</div>
+        </div>
+        <a href="greece.html" class="card">
+            <img src="Greece.jpeg">
+            <div class="card-text">Greece</div>
+        </a>
+        <a href="qatar.html" class="card">
+            <img src="Qatar.jpeg">
+            <div class="card-text">Qatar</div>
+        </a>
+        <div class="card">
+            <img src="Switzelrand.jpeg">
+            <div class="card-text">Switzerland</div>
+        </div>
+        <div class="card">
+            <img src="Disneyland.jpeg">
+            <div class="card-text">Disneyland Hong Kong</div>
+        </div>
+    </div>
+</section>
+
+<!-- National -->
+<section id="national">
+    <h2>National Destinations</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="Skardu.jpeg">
+            <div class="card-text">Skardu</div>
+        </div>
+        <div class="card">
+            <img src="MALAM JABBA.jpeg">
+            <div class="card-text">Malam Jabba</div>
+        </div>
+        <div class="card">
+            <img src="HUNZA.jpeg">
+            <div class="card-text">Hunza</div>
+        </div>
+        <a href="swat.html" class="card">
+            <img src="Swat.jpeg">
+            <div class="card-text">Swat Valley</div>
+        </a>
+        <div class="card">
+            <img src="BANJOUSA.jpeg">
+            <div class="card-text">Bunjosa</div>
+        </div>
+    </div>
+</section>
+
+<!-- Packages -->
+<section id="packages">
+    <h2>Popular Packages</h2>
+    <div class="package-box">
+        <div class="package"><h3>Hunza Adventure</h3><p>PKR 45,000</p></div>
+        <div class="package"><h3>Skardu Explorer</h3><p>PKR 75,000</p></div>
+        <div class="package"><h3>Maldives Honeymoon</h3><p>$2,500</p></div>
+        <div class="package"><h3>Europe Dream</h3><p>$5,000</p></div>
+        <div class="package"><h3>Family Northern</h3><p>PKR 120,000</p></div>
+    </div>
+</section>
+
+<!-- FAQs -->
+<section id="faqs">
+    <h2>FAQs</h2>
+    <div class="faq"><strong>Is it safe?</strong><p>Yes, fully guided and secure.</p></div>
+    <div class="faq"><strong>Family packages?</strong><p>Yes available.</p></div>
+    <div class="faq"><strong>Custom tours?</strong><p>Absolutely.</p></div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews">
+    <h2>Customer Reviews</h2>
+    <div class="review">⭐⭐⭐⭐⭐<p>“Amazing experience!”</p></div>
+    <div class="review">⭐⭐⭐⭐☆<p>“Very professional.”</p></div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2025 AATA Travel | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

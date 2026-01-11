@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Qatar | Experience the Extraordinary</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* CSS Reset & Variables */
+        :root {
+            --primary: #8a1538;
+            /* Qatar Maroon */
+            --primary-dark: #6d102b;
+            --accent: #dcb562;
+            /* Gold */
+            --bg-light: #f9fafb;
+            --bg-dark: #1f2937;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --white: #ffffff;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3,
+        h4 {
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        @media(max-width: 768px) {
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--text-dark);
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                background: white;
+                width: 100%;
+                text-align: center;
+                padding: 1rem;
+                box-shadow: var(--shadow-md);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        /* Image Carousel */
+        .carousel-container {
+            position: relative;
+            height: 80vh;
+            overflow: hidden;
+            margin-top: 60px;
+            /* offset header */
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            animation: carousel-fade 20s infinite;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-slide::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+        }
+
+        .carousel-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: content-reveal 20s infinite;
+        }
+
+        .carousel-content h1 {
+            font-size: 4rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .carousel-content p {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        /* Animation delays for slides */
+        .carousel-slide:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .carousel-slide:nth-child(2) {
+            animation-delay: 5s;
+        }
+
+        .carousel-slide:nth-child(3) {
+            animation-delay: 10s;
+        }
+
+        .carousel-slide:nth-child(4) {
+            animation-delay: 15s;
+        }
+
+        .carousel-slide:nth-child(1) .carousel-content {
+            animation-delay: 0s;
+        }
+
+        .carousel-slide:nth-child(2) .carousel-content {
+            animation-delay: 5s;
+        }
+
+        .carousel-slide:nth-child(3) .carousel-content {
+            animation-delay: 10s;
+        }
+
+        .carousel-slide:nth-child(4) .carousel-content {
+            animation-delay: 15s;
+        }
+
+        @keyframes carousel-fade {
+            0% {
+                opacity: 0;
+                z-index: 1;
+            }
+
+            5% {
+                opacity: 1;
+                z-index: 10;
+            }
+
+            25% {
+                opacity: 1;
+                z-index: 10;
+            }
+
+            30% {
+                opacity: 0;
+                z-index: 1;
+            }
+
+            100% {
+                opacity: 0;
+                z-index: 1;
+            }
+        }
+
+        @keyframes content-reveal {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            5% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            25% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            30% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @media(max-width: 768px) {
+            .carousel-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Sections General */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-desc {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Overview Section */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .overview-text h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .overview-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .overview-img img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Culture Section */
+        .culture-section {
+            background-color: #fff;
+            border-radius: 30px;
+            margin: 4rem auto;
+            padding: 4rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .culture-content {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+        }
+
+        .culture-content img {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            margin-top: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Attractions Grid */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .attraction-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .attraction-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .attraction-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .attraction-info {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .attraction-info h4 {
+            color: var(--primary);
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Hotels */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .hotel-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .hotel-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hotel-img-wrapper {
+            position: relative;
+            height: 250px;
+        }
+
+        .hotel-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .star-rating {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 4px 8px;
+            border-radius: 20px;
+            color: #fbbf24;
+            letter-spacing: 2px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .hotel-details {
+            padding: 1.5rem;
+        }
+
+        .hotel-details h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hotel-price {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-book {
+            display: inline-block;
+            margin-top: 1rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn-book:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
+        }
+
+        /* Packages */
+        .package-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            transition: 0.3s;
+        }
+
+        .package-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+        }
+
+        .package-img {
+            height: 200px;
+        }
+
+        .package-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .package-body {
+            padding: 2rem;
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .package-title {
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .package-price {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .package-desc {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .package-features {
+            border-top: 1px solid #eee;
+            padding-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .package-features li {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .package-features li::before {
+            content: '✓';
+            color: var(--primary);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-dark);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #d1d5db;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        .social-icon:hover {
+            background: var(--primary);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 900px) {
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Visit Qatar.</div>
+            <div class="nav-links" id="navLinks">
+                <a href="#overview">Overview</a>
+                <a href="#culture">Culture</a>
+                <a href="#attractions">Attractions</a>
+                <a href="#hotels">Hotels</a>
+                <a href="#packages">Packages</a>
+            </div>
+            <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('active')">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Carousel -->
+    <div class="carousel-container">
+        <!-- Slide 1: Doha Skyline -->
+        <div class="carousel-slide"
+            style="background-image: url('https://i.pinimg.com/originals/2c/3a/0b/2c3a0beb7a31f16e791bab228693b7a5.jpg');">
+            <div class="carousel-content">
+                <h1>Discover Doha</h1>
+                <p>Where the desert meets the sea in perfect harmony.</p>
+            </div>
+        </div>
+        <!-- Slide 2: Souq Waqif -->
+        <div class="carousel-slide"
+            style="background-image: url('https://tse2.mm.bing.net/th/id/OIP.c4rHIS_XVeNji75cxKC8jgHaFj?rs=1&pid=ImgDetMain&o=7&rm=3');">
+            <div class="carousel-content">
+                <h1>Timeless Tradition</h1>
+                <p>Explore the vibrant alleys of Souq Waqif.</p>
+            </div>
+        </div>
+        <!-- Slide 3: Desert -->
+        <div class="carousel-slide"
+            style="background-image: url('https://www.visitqatar.qa/content/dam/visitqatar/img/things-to-do/adventures/the-desert/the-desert-main.jpg');">
+            <div class="carousel-content">
+                <h1>Desert Adventures</h1>
+                <p>Experience the thrill of the Inland Sea.</p>
+            </div>
+        </div>
+        <!-- Slide 4: The Pearl -->
+        <div class="carousel-slide"
+            style="background-image: url('https://visitqatar.com/adobe/dynamicmedia/deliver/dm-aid--b9c7f7fe-c2ad-447f-95a0-74ea5dccd8a4/pearl4.jpg?quality=75&preferwebp');">
+            <div class="carousel-content">
+                <h1>Modern Luxury</h1>
+                <p>Indulge in the elegance of The Pearl.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overview Section -->
+    <section id="overview">
+        <div class="overview-grid">
+            <div class="overview-text">
+                <h3>Welcome to Qatar</h3>
+                <p>Qatar is a peninsula in the Persian Gulf, offering a fascinating blend of modern luxury and
+                    deep-rooted heritage. From the glittering skyline of West Bay to the ancient traditions of the
+                    desert tribes, Qatar is a land of contrasts.</p>
+                <p>Whether you are looking for world-class museums, five-star dining, or authentic cultural experiences,
+                    this hidden gem of the Middle East has it all. Prepare to be captivated by its hospitality, safety,
+                    and vision for the future.</p>
+                <a href="#attractions" class="btn-book">Explore Attractions</a>
+            </div>
+            <div class="overview-img">
+                <!-- Using Skyline at night -->
+                <img src="https://live.staticflickr.com/963/41786851592_193d0f3f4c_b.jpg"
+                    alt="Doha Skyline Night">
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section id="culture" class="culture-section">
+        <div class="section-desc">
+            <h2>Rich Heritage & Culture</h2>
+            <p>Experience the warmth of Qatari hospitality and the artistry of Islamic traditions.</p>
+        </div>
+        <div class="culture-content">
+            <p style="max-width: 800px; font-size: 1.1rem; line-height:1.8;">
+                Qatari culture is deeply connected to its Bedouin past. Hospitality is paramount—guests are welcomed
+                with Arabic coffee (Gahwa) and dates. Falconry remains a cherished sport, symbolizing courage and
+                patience. The nation celebrates its heritage through poetry, song, and festivals, while embracing the
+                future with open arms.
+            </p>
+            <!-- Using MIA photo as culture representative -->
+            <img src="https://www.cracknell.com/wp-content/uploads/2023/04/Desktop-Banner-1920x726-IMG-CR-Sandra-Doha.jpg"
+                alt="Museum of Islamic Art">
+        </div>
+    </section>
+
+    <!-- Attractions Section -->
+    <section id="attractions">
+        <h2>Top Attractions</h2>
+        <div class="section-desc">Must-visit landmarks that define the spirit of Qatar.</div>
+        <div class="grid-4">
+            <!-- 1. Souq Waqif -->
+            <div class="attraction-card">
+                <img src="https://tse2.mm.bing.net/th/id/OIP.c4rHIS_XVeNji75cxKC8jgHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Souq Waqif">
+                <div class="attraction-info">
+                    <h4>Souq Waqif</h4>
+                    <p class="text-sm">A traditional market known for its mud-daubed buildings, spices, perfumes, and
+                        falcon hospital.</p>
+                </div>
+            </div>
+            <!-- 2. Museum of Islamic Art -->
+            <div class="attraction-card">
+                <img src="https://www.cracknell.com/wp-content/uploads/2023/04/Desktop-Banner-1920x726-IMG-CR-Sandra-Doha.jpg"
+                    alt="MIA">
+                <div class="attraction-info">
+                    <h4>Museum of Islamic Art</h4>
+                    <p class="text-sm">An architectural masterpiece housing one of the world's most complete collections
+                        of Islamic artifacts.</p>
+                </div>
+            </div>
+            <!-- 3. The Pearl -->
+            <div class="attraction-card">
+                <img src="https://visitqatar.com/adobe/dynamicmedia/deliver/dm-aid--b9c7f7fe-c2ad-447f-95a0-74ea5dccd8a4/pearl4.jpg?quality=75&preferwebp"
+                    alt="The Pearl Qatar">
+                <div class="attraction-info">
+                    <h4>The Pearl-Qatar</h4>
+                    <p class="text-sm">A man-made island featuring Mediterranean-style marinas, luxury shopping, and
+                        dining.</p>
+                </div>
+            </div>
+            <!-- 4. Katara Cultural Village -->
+            <div class="attraction-card">
+                <!-- Using Katara Entrance -->
+                <img src="https://tse3.mm.bing.net/th/id/OIP.6Qm0o__RQXl-7AE-vBUCwwHaEK?rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="Katara">
+                <div class="attraction-info">
+                    <h4>Katara Cultural Village</h4>
+                    <p class="text-sm">The center for art and culture, featuring a beautiful amphitheater, mosques, and
+                        galleries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hotels Section -->
+    <section id="hotels" style="background: #fff; padding: 5rem 2rem;">
+        <h2>Stay in Style</h2>
+        <div class="section-desc">Handpicked accommodations for every budget.</div>
+        <div class="grid-3">
+            <!-- 5 Star -->
+            <div class="hotel-card">
+                <div class="hotel-img-wrapper">
+                    <!-- Sheraton Doha -->
+                    <img src="https://maraya-tours.com/wp-content/uploads/2024/05/Sheraton-Grand-Hotel-Doha-Qatar.webp"
+                        alt="Sheraton Grand Doha">
+                    <div class="star-rating">★★★★★</div>
+                </div>
+                <div class="hotel-details">
+                    <h3>Sheraton Grand Doha</h3>
+                    <div class="hotel-price">PKR 85,000 / night</div>
+                    <p>Experience world-class service, private beaches, and iconic pyramidal architecture in the heart
+                        of West Bay.</p>
+                    <a href="#" class="btn-book">View Details</a>
+                </div>
+            </div>
+            <!-- 4 Star -->
+            <div class="hotel-card">
+                <div class="hotel-img-wrapper">
+                    <!-- Generic Modern Building for 4-Star -->
+                    <img src="https://du-lich.chudu24.com/f/m/2212/28/radisson-blu-hotel-doha-formerly-ramada-plaza-doha.jpeg" alt="City Hotel">
+                    <div class="star-rating">★★★★</div>
+                </div>
+                <div class="hotel-details">
+                    <h3>Radisson Blu Doha</h3>
+                    <div class="hotel-price">PKR 45,000 / night</div>
+                    <p>Modern luxury with excellent amenities, perfect for both business and leisure travelers.</p>
+                    <a href="#" class="btn-book">View Details</a>
+                </div>
+            </div>
+            <!-- 3 Star -->
+            <div class="hotel-card">
+                <div class="hotel-img-wrapper">
+                    <!-- Generic Room -->
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.NqExsE2QfCm0TRZIUkOcCgHaJK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Comfort Hotel">
+                    <div class="star-rating">★★★</div>
+                </div>
+                <div class="hotel-details">
+                    <h3>Premier Inn</h3>
+                    <div class="hotel-price">PKR 18,000 / night</div>
+                    <p>Comfortable, affordable, and centrally located. Great value for comfortable stays.</p>
+                    <a href="#" class="btn-book">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages">
+        <h2>Travel Packages</h2>
+        <div class="section-desc">Curated experiences designed just for you.</div>
+        <div class="grid-3">
+            <!-- Solo -->
+            <div class="package-card">
+                <div class="package-img">
+                    <!-- Desert for Solo -->
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.OQ9F2Z71-P0co6jdIWZl-AHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Solo Travel">
+                </div>
+                <div class="package-body">
+                    <div>
+                        <div class="package-title">Solo Explorer</div>
+                        <div class="package-price">PKR 150,000</div>
+                        <p class="package-desc">For the independent adventurer.</p>
+                        <ul class="package-features">
+                            <li>5 Days / 4 Nights</li>
+                            <li>Desert Safari & Camel Ride</li>
+                            <li>Hostel / 3-Star Stay</li>
+                            <li>City Tour</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn-book">Book Now</a>
+                </div>
+            </div>
+            <!-- Couple -->
+            <div class="package-card">
+                <div class="package-img">
+                    <!-- Sunset / Dhow -->
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.40c3CQFEFDTCnJZ41x9iWQHaE7?rs=1&pid=ImgDetMain&o=7&rm=3"
+                        alt="Romantic Travel">
+                </div>
+                <div class="package-body">
+                    <div>
+                        <div class="package-title">Romantic Escape</div>
+                        <div class="package-price">PKR 350,000</div>
+                        <p class="package-desc">Luxury and romance combined.</p>
+                        <ul class="package-features">
+                            <li>7 Days / 6 Nights</li>
+                            <li>Sunset Dhow Cruise</li>
+                            <li>5-Star Resort Stay</li>
+                            <li>Private Beach Access</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn-book">Book Now</a>
+                </div>
+            </div>
+            <!-- Family -->
+            <div class="package-card">
+                <div class="package-img">
+                    <!-- Park / MIA Park -->
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.dGOpkMFN-GQiUlKLcO6giAHaE8?rs=1&pid=ImgDetMain&o=7&rm=3"
+                        alt="Family Vacation">
+                </div>
+                <div class="package-body">
+                    <div>
+                        <div class="package-title">Family Fun</div>
+                        <div class="package-price">PKR 450,000</div>
+                        <p class="package-desc">Memories for the whole family.</p>
+                        <ul class="package-features">
+                            <li>10 Days / 9 Nights</li>
+                            <li>Theme Parks & Museums</li>
+                            <li>Family Suite Stay</li>
+                            <li>All Transfers Included</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn-book">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo">Visit Qatar.</div>
+                <p style="margin-top: 1rem; color: #d1d5db;">
+                    Your gateway to the hidden jewel of the Middle East. Experience the extraordinary.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#overview">About Us</a></li>
+                    <li><a href="#attractions">Destinations</a></li>
+                    <li><a href="#packages">Tour Packages</a></li>
+                    <li><a href="#">Travel Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul class="footer-links">
+                    <li>+974 4000 0000</li>
+                    <li>info@visitqatar.qa</li>
+                    <li>Doha, Qatar</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" class="social-icon">I</a>
+                    <a href="#" class="social-icon">F</a>
+                    <a href="#" class="social-icon">T</a>
+                    <a href="#" class="social-icon">Y</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Visit Qatar Tourism. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">https://tse4.mm.bing.net/th/id/OIP.9I7rzMEizmZdSRe7gK7CZAHaD3?rs=1&pid=ImgDetMain&o=7&rm=3
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Swat Valley | The Switzerland of Pakistan</title>
+    <style>
+        /* Modern Reset & Variables */
+        :root {
+            --primary: #2ECC71;
+            /* Emerald Green */
+            --secondary: #27AE60;
+            /* Darker Green */
+            --accent: #F1C40F;
+            /* Gold */
+            --dark: #2C3E50;
+            --light: #ECF0F1;
+            --white: #ffffff;
+            --text-gray: #555;
+            --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.2);
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: #f9fdf9;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--dark);
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* Mobile Menu Toggle (Hidden on Desktop) */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Carousel */
+        .carousel {
+            height: 85vh;
+            position: relative;
+            overflow: hidden;
+            margin-top: 60px;
+            /* Offset for fixed header */
+        }
+
+        .carousel-track {
+            display: flex;
+            width: 400%;
+            height: 100%;
+            animation: slide 20s infinite;
+        }
+
+        .slide {
+            width: 25%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: var(--white);
+            padding: 20px 40px;
+            border-radius: var(--radius);
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .caption h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .caption p {
+            font-size: 1.2rem;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            20% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-25%);
+            }
+
+            45% {
+                transform: translateX(-25%);
+            }
+
+            50% {
+                transform: translateX(-50%);
+            }
+
+            70% {
+                transform: translateX(-50%);
+            }
+
+            75% {
+                transform: translateX(-75%);
+            }
+
+            95% {
+                transform: translateX(-75%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* Overview Section */
+        .overview-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .overview-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .overview-text p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: var(--text-gray);
+        }
+
+        .overview-img img {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-hover);
+            transition: transform 0.3s;
+        }
+
+        .overview-img img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Culture Section */
+        .culture-section {
+            background-color: #f0f7f4;
+        }
+
+        .culture-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            box-shadow: var(--shadow);
+        }
+
+        .culture-img {
+            background: url('https://tse4.mm.bing.net/th/id/OIP.9I7rzMEizmZdSRe7gK7CZAHaD3?rs=1&pid=ImgDetMain&o=7&rm=3') center/cover;
+            min-height: 400px;
+        }
+
+        .culture-info {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .culture-info h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        /* Cards Grid Layout (Attractions, Hotels, Packages) */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card-img {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card:hover .card-img img {
+            transform: scale(1.1);
+        }
+
+        .card-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            align-self: flex-start;
+        }
+
+        .price {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--secondary);
+            margin-top: auto;
+        }
+
+        /* Hotels Specific */
+        .stars {
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        /* Packages Specific */
+        .pkg-features {
+            list-style: disc;
+            margin-left: 20px;
+            margin-bottom: 15px;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 60px 20px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            text-align: left;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .footer-col a {
+            display: block;
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            color: #888;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                /* Hide nav links on mobile for simplicity in this single-file demo */
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .overview-content {
+                grid-template-columns: 1fr;
+            }
+
+            .culture-card {
+                grid-template-columns: 1fr;
+            }
+
+            .culture-img {
+                min-height: 250px;
+            }
+
+            .carousel {
+                height: 60vh;
+            }
+
+            .caption h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">Visit<span>Swat</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#culture">Culture</a></li>
+                    <li><a href="#attractions">Attractions</a></li>
+                    <li><a href="#hotels">Hotels</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                </ul>
+                <div class="menu-toggle">☰</div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Image Carousel -->
+    <div class="carousel">
+        <div class="carousel-track">
+            <!-- Slide 1 -->
+            <div class="slide">
+                <img src="https://i.dawn.com/primary/2017/05/592a8937143a9.jpg"
+                    alt="Mahodand Lake">
+                <div class="caption">
+                    <h1>Mahodand Lake</h1>
+                    <p>The Jewel of Swat Valley</p>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.gcCJyNdfYvaxyrznK4ovvAHaEu?rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="Malam Jabba Ski Resort">
+                <div class="caption">
+                    <h1>Malam Jabba</h1>
+                    <p>Pakistan's Premier Ski Resort</p>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide">
+                <img src="https://dadbloguk.com/wp-content/uploads/2020/01/Swat-Valley.jpg"
+                    alt="Green Valley Swat">
+                <div class="caption">
+                    <h1>Lush Green Valleys</h1>
+                    <p>Experience Nature at its Best</p>
+                </div>
+            </div>
+            <!-- Slide 4 -->
+            <div class="slide">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.9I7rzMEizmZdSRe7gK7CZAHaD3?rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="White Palace Marghazar">
+                <div class="caption">
+                    <h1>Royal History</h1>
+                    <p>The Majestic White Palace</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overview Section -->
+    <section id="overview">
+        <div class="section-subtitle">WELCOME TO PARADISE</div>
+        <h2>Discover Swat Valley</h2>
+        <div class="overview-content">
+            <div class="overview-text">
+                <h3>The Switzerland of the East</h3>
+                <p>Swat Valley is a place of fairy tales, majestic mountains, and crystal-clear waters. Located in the
+                    Khyber Pakhtunkhwa province of Pakistan, it is renowned for its outstanding natural beauty.</p>
+                <p>From the snow-capped peaks of Malam Jabba to the serene waters of Mahodand Lake, Swat offers a
+                    diverse range of experiences for every traveler. Whether you seek adventure, history, or
+                    tranquility, Swat has it all.</p>
+                <a href="#packages" class="btn">Explore Packages</a>
+            </div>
+            <div class="overview-img">
+                <img src="https://peacetourism.org/wp-content/uploads/2019/05/Peace-Tourism.jpg"
+                    alt="Swat Valley Landscape">
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section id="culture" class="culture-section">
+        <h2>Rich Culture & Heritage</h2>
+        <div class="section-subtitle">TRADITIONS • HISTORY • HOSPITALITY</div>
+        <div class="culture-card">
+            <div class="culture-img"
+                style="background-image: url('https://tse4.mm.bing.net/th/id/OIP.9I7rzMEizmZdSRe7gK7CZAHaD3?rs=1&pid=ImgDetMain&o=7&rm=3');">
+            </div>
+            <div class="culture-info">
+                <h3>A Legacy of Kings</h3>
+                <p>Swat is not just about nature; it's a land deep in history. Once a major center of early Buddhism,
+                    the valley is dotted with ancient stupas and monasteries. The region also boasts a proud Pashtun
+                    heritage, known for the unwritten code of "Pashtunwali" which emphasizes hospitality and honor.</p>
+                <br>
+                <p>Local handicrafts, especially the famous Swati embroidery and wood carving, are testaments to the
+                    artistic skills of the people. Festivals are celebrated with traditional music and dance, making
+                    every visit a cultural immersion.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attractions Section -->
+    <section id="attractions">
+        <h2>Top Attractions</h2>
+        <div class="section-subtitle">MUST-VISIT DESTINATIONS</div>
+        <div class="grid-container">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.gcCJyNdfYvaxyrznK4ovvAHaEu?rs=1&pid=ImgDetMain&o=7&rm=3"
+                        alt="Malam Jabba">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Malam Jabba</h3>
+                    <p class="card-desc">The only ski resort in Pakistan, offering snowboarding, skiing, and chairlift
+                        rides with breathtaking views.</p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://i.dawn.com/primary/2017/05/592a8937143a9.jpg"
+                        alt="Mahodand Lake">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Mahodand Lake</h3>
+                    <p class="card-desc">A glacial alpine lake located in the upper Ushu Valley, famous for boating and
+                        fishing amidst towering pines.</p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://peacetourism.org/wp-content/uploads/2019/05/Peace-Tourism.jpg"
+                        alt="Kalam Valley">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Kalam Valley</h3>
+                    <p class="card-desc">Known for its waterfalls, thick forests, and the swirling Swat River, Kalam is
+                        the heart of tourism in the region.</p>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.9I7rzMEizmZdSRe7gK7CZAHaD3?rs=1&pid=ImgDetMain&o=7&rm=3"
+                        alt="White Palace">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">White Palace</h3>
+                    <p class="card-desc">The historic summer residence of the Wali of Swat, built with white marble in
+                        1940, now a heritage hotel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hotels Section -->
+    <section id="hotels" style="background-color: #f9f9f9;">
+        <h2>Premium Accommodation</h2>
+        <div class="section-subtitle">STAY IN COMFORT</div>
+        <div class="grid-container">
+            <!-- Hotel 1 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.gcCJyNdfYvaxyrznK4ovvAHaEu?rs=1&pid=ImgDetMain&o=7&rm=3"
+                        alt="Pearl Continental">
+                </div>
+                <div class="card-body">
+                    <span class="badge">5-Star</span>
+                    <h3 class="card-title">Pearl Continental Malam Jabba</h3>
+                    <div class="stars">★★★★★</div>
+                    <p class="card-desc">Luxury mountain resort with ski access and premium amenities.</p>
+                    <div class="price">PKR 35,000 / night</div>
+                </div>
+            </div>
+            <!-- Hotel 2 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.aa5gUT0wP26ZZxz4XDcxFAHaE8?rs=1&pid=ImgDetMain&o=7&rm=3"
+                        alt="Swat Serena">
+                </div>
+                <div class="card-body">
+                    <span class="badge">4-Star</span>
+                    <h3 class="card-title">Swat Serena Hotel</h3>
+                    <div class="stars">★★★★☆</div>
+                    <p class="card-desc">Heritage style architecture with lush gardens in Saidu Sharif.</p>
+                    <div class="price">PKR 25,000 / night</div>
+                </div>
+            </div>
+            <!-- Hotel 3 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.7YueHgG5FnsQy_9sEdwViwHaE8?rs=1&pid=ImgDetMain&o=7&rm=3"
+                        alt="Rock City Resort">
+                </div>
+                <div class="card-body">
+                    <span class="badge">3-Star</span>
+                    <h3 class="card-title">Rock City Resort</h3>
+                    <div class="stars">★★★☆☆</div>
+                    <p class="card-desc">Comfortable stay with river views and hiking trails nearby.</p>
+                    <div class="price">PKR 12,000 / night</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages">
+        <h2>Travel Packages</h2>
+        <div class="section-subtitle">CURATED EXPERIENCES FOR YOU</div>
+        <div class="grid-container">
+            <!-- Package 1 -->
+            <div class="card" style="border-top: 5px solid var(--primary);">
+                <div class="card-img">
+                    <img src="https://peacetourism.org/wp-content/uploads/2019/05/Peace-Tourism.jpg"
+                        alt="Family Trip">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Family Getaway</h3>
+                    <p class="card-desc">A relaxing week for the whole family.</p>
+                    <ul class="pkg-features">
+                        <li>7 Days / 6 Nights</li>
+                        <li>Includes Kalam & Malam Jabba</li>
+                        <li>Luxury Transport (Toyota Coaster)</li>
+                        <li>Breakfast & Dinner included</li>
+                    </ul>
+                    <div class="price">PKR 150,000</div>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+            <!-- Package 2 -->
+            <div class="card" style="border-top: 5px solid var(--accent);">
+                <div class="card-img">
+                    <img src="https://dadbloguk.com/wp-content/uploads/2020/01/Swat-Valley.jpg"
+                        alt="Couple Trip">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Honeymoon Special</h3>
+                    <p class="card-desc">Romantic escape in the mountains.</p>
+                    <ul class="pkg-features">
+                        <li>5 Days / 4 Nights</li>
+                        <li>Candlelight Dinner at PC</li>
+                        <li>Private Corolla Car</li>
+                        <li>Jeep Safari to Mahodand</li>
+                    </ul>
+                    <div class="price">PKR 120,000</div>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+            <!-- Package 3 -->
+            <div class="card" style="border-top: 5px solid var(--dark);">
+                <div class="card-img">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.gcCJyNdfYvaxyrznK4ovvAHaEu?rs=1&pid=ImgDetMain&o=7&rm=3"
+                        alt="Solo Trip">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Solo Adventure</h3>
+                    <p class="card-desc">For the thrill-seekers.</p>
+                    <ul class="pkg-features">
+                        <li>3 Days / 2 Nights</li>
+                        <li>Skiing at Malam Jabba</li>
+                        <li>Shared Transport/Bus</li>
+                        <li>Camping options available</li>
+                    </ul>
+                    <div class="price">PKR 30,000</div>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo">Visit<span>Swat</span></div>
+                <p style="margin-top: 15px; color: #ccc;">The official tourism portal for Swat Valley, providing the
+                    best travel experiences and guides since 2025.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#overview">About Swat</a>
+                <a href="#attractions">Top Destinations</a>
+                <a href="#hotels">Book Hotels</a>
+                <a href="#packages">Tour Packages</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p style="color: #ccc; margin-bottom: 10px;">📍 Mingora, Swat, KPK, Pakistan</p>
+                <p style="color: #ccc; margin-bottom: 10px;">📞 +92 300 1234567</p>
+                <p style="color: #ccc;">✉️ info@visitswat.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Visit Swat Tourism. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
